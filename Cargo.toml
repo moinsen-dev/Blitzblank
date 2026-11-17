@@ -1,0 +1,24 @@
+[package]
+name = "blitzblank"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "blitzblank"
+path = "src/main.rs"
+
+[dependencies]
+eframe = "0.33"
+sysinfo = "0.37"
+trash = "5"
+dirs = "6"
+walkdir = "2"
+image = { version = "0.25", default-features = false, features = ["png"] }
+blake3 = "1"
+plist = "1"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+winit = "0.30"
+
+[profile.release]
+opt-level = 3
